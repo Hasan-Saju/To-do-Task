@@ -5,6 +5,7 @@ const todoList = document.querySelector('.todo-list');
 
 // Event Listeners
 todoButton.addEventListener('click', addTodo);
+todoList.addEventListener('click', deleteCheck);
 
 
 
@@ -47,3 +48,31 @@ function addTodo(event) {
 
 
 }
+
+function deleteCheck(event) {
+    // console.log(event.target);
+    const item = event.target;    //ja click kortesi, oita dhortesi
+    // delete todo
+    // console.log(item);
+    if (item.classList[0] === 'trash-btn')  //trash button hoile class 'trash-btn'
+    {
+        const todo = item.parentElement;
+        // animation
+        todo.classList.add("fall");
+
+        // transition/animation shesh howar por execute hobe
+        todo.addEventListener('transitioned', function () {
+            todo.remove();
+        });
+
+    }
+
+    // for check mark
+    if (item.classList[0] === 'complete-btn') {
+        const todo = item.parentElement;
+        todo.classList.toggle("completed");
+    }
+    // console.log(item);
+}
+
+// 41.45
