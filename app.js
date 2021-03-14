@@ -21,7 +21,7 @@ function addTodo(event) {
 
     // creating li
     const newTodo = document.createElement("li");
-    newTodo.innerText = 'todo list'
+    newTodo.innerText = todoInput.value;
     newTodo.classList.add('todo-item');
     todoDiv.appendChild(newTodo);
 
@@ -35,14 +35,15 @@ function addTodo(event) {
     // check trash button
     const trashButton = document.createElement("button");
     trashButton.innerHTML = '<i class="fas fa-trash"></i>';
-    trashButton.classList.add("complete-btn");
+    trashButton.classList.add("trash-btn");
     todoDiv.appendChild(trashButton);
 
     // made a set of input and buttons
     // now append the set to ul
     todoList.appendChild(todoDiv);
 
-
+    // clear todo input box
+    todoInput.value = "";
 
 
 }
