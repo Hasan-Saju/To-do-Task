@@ -61,7 +61,7 @@ function deleteCheck(event) {
         todo.classList.add("fall");
 
         // transition/animation shesh howar por execute hobe
-        todo.addEventListener('transitioned', function () {
+        todo.addEventListener('transitionend', function () {
             todo.remove();
         });
 
